@@ -161,7 +161,7 @@ export default function App() {
         <motion.section
           id="booking"
           key="booking"
-          className="relative z-10 flex justify-center px-4 pb-14 -mt-10 sm:-mt-16"
+          className="relative z-10 flex justify-center px-4 pb-10 -mt-40 sm:-mt-56 md:-mt-72"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 40 }}
@@ -175,7 +175,7 @@ export default function App() {
         <motion.div
           className="w-full max-w-2xl rounded-3xl border border-white/5 
                      bg-slate-900/70 backdrop-blur-2xl 
-                     shadow-[0_24px_80px_rgba(0,0,0,0.9)] overflow-hidden"
+                     shadow-[0_24px_80px_rgba(0,0,0,0.9)]"
           initial={{ opacity: 0, y: 30, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
@@ -296,6 +296,8 @@ export default function App() {
                     maxDate={new Date(
                       Date.now() + 7 * 24 * 60 * 60 * 1000
                     )}
+                      withPortal
+                      popperPlacement="bottom-start"
                     className="w-full px-3 py-2.5 rounded-xl bg-black/40 border border-white/5 text-sm outline-none focus:ring-2 focus:ring-violet-500/70 focus:border-violet-400"
                   />
                   {errors.date && (
