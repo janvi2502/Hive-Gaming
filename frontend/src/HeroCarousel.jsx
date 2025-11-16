@@ -27,7 +27,7 @@ export default function HeroCarousel({ onBookClick }) {
 
   function scrollToBooking() {
     const el = document.getElementById("booking");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   return (
@@ -37,7 +37,7 @@ export default function HeroCarousel({ onBookClick }) {
         <motion.img
           key={current.src}
           src={current.src}
-          alt={current.caption}
+          alt="Hive gaming"
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -102,34 +102,7 @@ export default function HeroCarousel({ onBookClick }) {
           </motion.div>
         </div>
 
-        {/* right: slide caption + dots (desktop only) */}
-        <motion.div
-          className="hidden md:flex flex-col items-end gap-3 flex-1"
-          initial={{ opacity: 0, x: 25 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <div className="px-4 py-3 rounded-2xl bg-black/55 border border-white/10 max-w-sm backdrop-blur-md">
-            <p className="text-xs text-slate-100 mb-1">
-              {current.caption}
-            </p>
-            <p className="text-[11px] text-slate-400">
-              Slide {index + 1} of {slides.length}
-            </p>
-          </div>
-
-          <div className="flex gap-1.5">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setIndex(i)}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === index ? "w-5 bg-violet-400" : "w-2 bg-slate-500/60"
-                }`}
-              />
-            ))}
-          </div>
-        </motion.div>
+        {/* right side intentionally left empty to keep images only */}
       </div>
     </section>
   );

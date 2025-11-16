@@ -8,7 +8,9 @@
     "prisma:dev": "prisma dev",
     "prisma:migrate": "prisma migrate dev",
     "prisma:generate": "prisma generate",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "seed:zones": "node src/seedZones.js",
+    "seed:admin": "node src/seedAdmin.js"
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.616.0",
