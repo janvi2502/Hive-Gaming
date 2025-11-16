@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hive Gaming Zone – Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-logo">H</div>
+        <div class="brand-text">
+          <h1>Hive Gaming Zone</h1>
+          <p>Book your slot in a few taps.</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-layout">
+      <section class="panel panel-primary">
+        <div class="panel-header">
+          <span class="step-badge">1</span>
+          <h2>Select Zone & Date</h2>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">
+            Gaming Zone
+            <select id="zoneSelect" class="field-control">
+              <option value="">Loading…</option>
+            </select>
+          </label>
+
+          <label class="field-label">
+            Date
+            <input type="date" id="dateInput" class="field-control" />
+          </label>
+
+          <button id="checkAvailabilityBtn" class="btn btn-primary">
+            Check Availability
+          </button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="step-badge">2</span>
+          <h2>Available Slots</h2>
+        </div>
+
+        <div id="slotsContainer" class="slots-container">
+          <p class="muted-text">Choose a zone and date to see slots.</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="step-badge">3</span>
+          <h2>Your Details</h2>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">
+            Name
+            <input
+              type="text"
+              id="nameInput"
+              class="field-control"
+              placeholder="Your name"
+            />
+          </label>
+
+          <label class="field-label">
+            Phone
+            <input
+              type="tel"
+              id="phoneInput"
+              class="field-control"
+              placeholder="Your phone number"
+            />
+          </label>
+
+          <label class="field-label">
+            Selected Slot
+            <input
+              type="text"
+              id="selectedSlotInput"
+              class="field-control"
+              readonly
+            />
+          </label>
+
+          <button id="bookBtn" class="btn btn-primary btn-full">
+            Confirm Booking
+          </button>
+
+          <div id="message" class="message"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Hive Gaming Zone &copy; <span id="year"></span></small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
